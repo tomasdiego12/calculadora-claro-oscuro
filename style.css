@@ -1,0 +1,176 @@
+/* ==============================================
+    ESTILOS BASE: MODO OSCURO (Default)
+   ============================================== */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', 'Helvetica Neue';
+    background-color: #1a202c;
+}
+
+.calculator {
+    width: 320px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #2d3748;
+}
+
+/* Pantalla de Visualización*/
+#display {
+    background-color: #1a202c;
+    color: #edf2f7;
+    font-size: 3.2em;
+    padding: 25px 20px;
+    text-align: right;
+    word-wrap: break-word; 
+    min-height: 50px;
+    letter-spacing: -2px;
+}
+
+/* Contenedor de Botones (Grid) */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 0;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.3em;
+    border: none;
+    cursor: pointer;
+    background-color: #62b6cb;
+    color: edf2f7;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+}
+
+/*Interaccion de Botones*/
+
+.btn:hover {
+    background-color: #305760;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos de botones especiales */
+.operator {
+    background-color: #1B4965;
+}
+
+.operator:hover {
+    background-color: #196b9e;
+}
+
+.clear {
+    background-color: #CAE9FF; 
+    color: #1a202c;
+}
+
+.clear:hover {
+    background-color: #a8d2ff;
+}
+
+.equals {
+    grid-column: 4; 
+    grid-row: 3 / span 2; 
+    background-color: #5FA8D3; 
+}
+
+.equals:hover {
+    background-color: #4bacf1;
+}
+
+.decimal {
+    background-color: #62b6cb;
+    color: #050505;
+}
+
+.number[data-value="0"] {
+    grid-column: span 2; 
+}
+
+/* --- ESTILO DEL BOTÓN DE TEMA --- */
+
+.theme-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 10px;
+    font-size: 1.2em;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: none;
+    z-index: 10;
+}
+
+.theme-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==============================================
+    MODO CLARO (Se activa con .light-mode en <body>)
+   ============================================== */
+
+.light-mode {
+    background-color: #f0f4f8;
+}
+
+.light-mode .calculator {
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .btn {
+    background-color: #f7fafc;
+    color: #1a202c;
+    box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .btn:hover {
+    background-color: #e2e8f0;
+}
+
+.light-mode .operator {
+    background-color: #f56565;
+    color: white;
+}
+
+.light-mode .operator:hover {
+    background-color: #fc8181;
+}
+
+.light-mode .clear {
+    background-color: #cbd5e0; 
+    color: #1a202c;
+}
+
+.light-mode .clear:hover {
+    background-color: #a0aec0;
+}
+
+.light-mode .equals {
+    background-color: #4299e1; 
+    color: white;
+}
+.light-mode .equals:hover {
+    background-color: #63b3ed;
+}
+
+/* Ajuste del botón de tema para el modo claro */
+.light-mode .theme-btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #1a202c;
+}
+.light-mode .theme-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
